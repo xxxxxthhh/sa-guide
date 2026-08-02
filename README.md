@@ -20,7 +20,8 @@
 ```
 ├── CLAUDE.md               # 项目约定(写作红线 / 组件规范 / DoD)— Claude Code 的最高指令
 ├── index.html              # 目录页(GitHub Pages 入口)
-├── assets/style.css        # 全书共享样式(暗色模式默认)
+├── assets/style.css        # 全书共享样式(暗色默认 + 纸墨护眼主题)
+├── assets/theme.js         # 主题切换(cookie 记忆;项目禁用 localStorage)
 ├── chapters/
 │   ├── preface.html        # 前言 · 如何阅读本书(含三条阅读路径)
 │   ├── ch00.html           # 第 0 章 · 人物与时间线

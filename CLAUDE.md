@@ -56,7 +56,7 @@
 ## 技术约定
 
 - 纯静态 HTML + 共享样式 `assets/style.css`;禁止引入框架;禁止 localStorage/sessionStorage。
-- 暗色模式为默认且唯一主题(读者常在夜间阅读)。
+- 暗色模式为默认主题(读者常在夜间阅读);另设「纸墨」护眼主题(暖纸面低对比,`:root[data-theme="sepia"]` 变量覆盖)。切换按钮由 `assets/theme.js` 全站注入(`<head>` 内同步加载以避免首帧闪烁),偏好以 cookie(`sa-theme`)记忆——localStorage 禁令不因此放松。新页面必须在样式表之后引入该脚本(见 `_template.html`)。
 - 字体:Noto Serif SC(正文)/ Noto Sans SC(UI)/ IBM Plex Mono(术语、数据、标签),经 Google Fonts 引入。
 - 图表用内联 SVG(参照 ch01 章头三条曲线示意),颜色一律取 CSS 变量。
 - 每章一个文件 `chapters/chNN.html`;附录 `chapters/appendix-a.html` 等;目录页 `index.html` 在根目录。

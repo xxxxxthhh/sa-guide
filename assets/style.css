@@ -1,12 +1,36 @@
 /* Situational Awareness 深度导读 — 全书共享样式 */
   :root{
+    color-scheme:dark;
     --bg:#0e1116; --surface:#151b23; --surface-2:#1b232e;
-    --line:#2a3542; --text:#d9e0e8; --text-dim:#8b98a8;
+    --line:#2a3542; --text:#ccd4de; --text-dim:#8b98a8;
     --accent:#e8a33d;            /* 审计琥珀:对账系统主色 */
     --concept:#7fb4e6;           /* 概念/链接蓝 */
     --ok:#4cc38a; --mid:#e8a33d; --no:#e5534b; --tbd:#8b98a8;
     --serif:"Noto Serif SC",serif; --sans:"Noto Sans SC",sans-serif; --mono:"IBM Plex Mono",monospace;
   }
+
+  /* ---------- 纸墨护眼主题(暖纸面低对比,cookie 记忆,localStorage 禁用) ---------- */
+  :root[data-theme="sepia"]{
+    color-scheme:light;
+    --bg:#f2ead9; --surface:#ece2cc; --surface-2:#e5d9bf;
+    --line:#d5c7a8; --text:#4a4033; --text-dim:#83755d;
+    --accent:#9d6a14;
+    --concept:#31628e;
+    --ok:#317a52; --mid:#9d6a14; --no:#b23c31; --tbd:#83755d;
+  }
+  :root[data-theme="sepia"] em{border-bottom-color:rgba(157,106,20,.5)}
+  :root[data-theme="sepia"] .term{background:rgba(49,98,142,.1)}
+  :root[data-theme="sepia"] a{border-bottom-color:rgba(49,98,142,.35)}
+  :root[data-theme="sepia"] .v-ok{background:rgba(49,122,82,.12)}
+  :root[data-theme="sepia"] .v-mid{background:rgba(157,106,20,.12)}
+  :root[data-theme="sepia"] .v-no{background:rgba(178,60,49,.12)}
+  :root[data-theme="sepia"] .v-tbd{background:rgba(131,117,93,.14)}
+
+  /* ---------- 主题切换按钮(assets/theme.js 注入) ---------- */
+  #theme-toggle{position:fixed;top:14px;right:14px;z-index:99;font-family:var(--mono);font-size:12px;
+    color:var(--text-dim);background:var(--surface);border:1px solid var(--line);border-radius:99px;
+    padding:6px 12px;cursor:pointer;line-height:1}
+  #theme-toggle:hover{color:var(--text);border-color:var(--accent)}
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{background:var(--bg);color:var(--text);font-family:var(--serif);line-height:1.95;font-size:17px}
