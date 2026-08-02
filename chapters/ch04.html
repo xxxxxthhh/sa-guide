@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 4 章 · 锁住实验室:AGI 的安保 —《Situational Awareness 深度导读》</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Situational Awareness 深度导读 · 第 4 章</div>
+  <h1>第 4 章 · 锁住实验室:AGI 的安保</h1>
+  <div class="sub">对应原文 Part IIIb: Lock Down the Labs — Security for AGI。全书语气最急迫的一章。两年后,他警告的那类窃密确实发生并被定罪了;而他呼吁的那种防御,方向却走反了。</div>
+  <svg class="trend" viewBox="0 0 720 120" role="img" aria-label="安保等级与威胁等级的落差示意">
+    <line x1="52" y1="98" x2="700" y2="98" stroke="#2a3542"/>
+    <line x1="52" y1="98" x2="52" y2="14" stroke="#2a3542"/>
+    <path d="M52 90 C 260 86, 420 74, 690 62" stroke="#7fb4e6" stroke-width="2" fill="none"/>
+    <path d="M52 74 C 260 60, 420 38, 690 20" stroke="#e5534b" stroke-width="2.5" fill="none"/>
+    <path d="M690 62 L690 20" stroke="#e8a33d" stroke-width="1" stroke-dasharray="3 3"/>
+    <text x="58" y="18">威胁 / 防御(示意)</text>
+    <text x="560" y="58">实验室安保水位</text>
+    <text x="574" y="16">国家级对手能力</text>
+    <text x="600" y="46">缺口</text>
+    <text x="60" y="112">2024</text>
+    <text x="660" y="112">2026</text>
+  </svg>
+</header>
+
+<h2><span class="no">4.1</span>论点地图:把"文件"当成"武器"来管</h2>
+<p>Part IIIb 的论证只用了一个概念转换,但这个转换极为有效:<b>把模型权重重新描述为一个文件</b>。一个训练完成的模型,无论多强,物理上只是一台计算机上的一个大文件;而算法机密——那些让训练跑通的关键技术判断——甚至连文件都不是,它们装在几十个人的脑子里。一旦接受这个描述,后面的推论几乎是自动的:美国花万亿美元、动员整个工业体系造出来的东西,可以被一次成功的拷贝或一次成功的挖角抹平。</p>
+<p>他由此提出两个层次的主张。近期层次:算法机密的保护比权重保护更紧迫——因为权重是几年后才值钱的资产,而通往 AGI 的关键技术路线现在就在实验室里成形。远期层次:达到能抵御国家级对手的安保水平,私营部门做不到,必须有政府介入。</p>
+<p>他对当时现状的判断毫不留情:</p>
+<blockquote><span class="q-en">"AI lab security isn't much better than 'random startup security.'"</span><br>中文释义:AI 实验室的安保,并不比"随便一家创业公司的安保"好多少。</blockquote>
+<p>作为导读要指出这句话在修辞上的位置:它不是一个可以直接对账的经验命题,而是一个<em>基准比较</em>。它的说服力全部来自后半段——"随便一家创业公司"这个参照系,与"国家安全资产"这个自我定位之间的荒诞落差。这是全文最有效的修辞装置之一:不需要证明实验室的安保有多差,只需要证明它与自身宣称的重要性不匹配。两年后回看,这个落差确实存在,但缩小的幅度和缩小的方式,都不太是他设想的样子。</p>
+
+<h2><span class="no">4.2</span>间谍威胁:他警告的事真的发生了</h2>
+<p>他花了整整一节反驳"间谍威胁被夸大了"这种直觉:</p>
+<blockquote><span class="q-en">"Too many smart people underrate espionage."</span><br>中文释义:太多聪明人低估了间谍活动。</blockquote>
+<p>这句话在 2024 年读起来像是安全圈的职业性焦虑,在 2026 年 1 月得到了一次司法层面的确认。旧金山联邦陪审团认定前 Google 软件工程师 Linwei Ding(丁林伟)七项经济间谍罪与七项窃取商业秘密罪成立——这是美国首例与 AI 相关的经济间谍定罪。案情本身几乎是他文中假想场景的复刻:一名在职员工在 2022 年 5 月至 2023 年 4 月间,把两千余页涉及 Google AI 技术机密的材料上传到个人云账户,同时在中国秘密担任一家公司的首席技术官、并着手创办自己的 AI 公司。</p>
+<p>值得注意的是这个案子的<em>技术标的</em>:被窃取的不是模型权重,而是支撑 Google 超算数据中心训练与服务大模型的硬件基础设施与软件平台机密。这恰好落在他所说的"算法机密比权重更早需要保护"那一栏里——虽然更准确的说法是"系统与基础设施机密"。他的分类学在这个案子上是成立的:先泄露的不是成品,而是配方与产线。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>国家级间谍威胁被严重低估;实验室的机密正在实质性外流。</b></div>
+  <span class="verdict v-ok">✅ 已验证</span>
+  <p>2026 年 1 月 30 日,旧金山联邦陪审团认定前 Google 工程师 Linwei Ding 七项经济间谍罪与七项窃取商业秘密罪成立,系美国首例 AI 相关经济间谍定罪。行为发生于 2022 年 5 月至 2023 年 4 月——即原文发表之前,这意味着他 2024 年的判断描述的不是未来风险而是既成事实。被窃标的是 Google 超算数据中心的硬件基础设施与软件平台机密,而非模型权重,与他"配方先于成品失守"的分类相符。同期国会听证与参议院层面亦就中国系统性针对美国 AI 产业的窃密活动提出关切。</p>
+  <div class="src">来源:<a href="https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology" target="_blank" rel="noopener">Former Google Engineer Found Guilty of Economic Espionage(美国司法部,2026-01)</a> · <a href="https://www.justice.gov/opa/pr/superseding-indictment-charges-chinese-national-relation-alleged-plan-steal-proprietary-ai" target="_blank" rel="noopener">替代起诉书(美国司法部,2025-02-04)</a></div>
+</div>
+
+<h2><span class="no">4.3</span>那句 12–24 个月的断言,已经到期</h2>
+<p>和第 3 章那条收入预测一样,本章也有一句带明确时限的话。他写道,今天的失败很快就会变得不可逆:未来 12 到 24 个月内,关键的 AGI 突破会泄露给中方,而这将成为国安界在这个十年结束前最大的悔恨。从 2024 年 6 月起算,这个窗口在 2026 年 6 月已经关闭。</p>
+<p>怎么给一条"秘密泄露了没有"的预测对账?这是本书最棘手的方法论问题之一,因为成功的窃密按定义是不可观测的。导读能做的是三件事:检查有无公开确证、检查有无反例、检查这个命题的<em>相关性</em>是否还成立。</p>
+<p>公开确证:没有。Ding 案的标的是基础设施机密而非"通往 AGI 的关键算法突破",且行为发生在窗口开始之前。窗口内没有任何一起被公开确认的、涉及前沿算法机密外泄的案件。</p>
+<p>反例:有,而且很有分量。2025 年年初,DeepSeek 用远低于西方前沿实验室的训练成本逼近第一梯队,其技术路线写在公开的技术报告里——多头潜在注意力、无辅助损失的负载均衡、多 token 预测、以及纯 RL 激发推理。这条路径不需要窃取任何人的秘密。它对本章论证的冲击是结构性的:如果关键突破可以被独立地重新发现,那么"锁住实验室"所能买到的时间就比他假设的短得多。<b>安保不是一道墙,只是一段延迟</b>——而延迟的长度取决于对手独立创新的能力,不取决于你的墙有多高。</p>
+<p>相关性:这一点上他仍然站得住。即使窃取不是唯一路径,它依然是最便宜的路径;Ding 案证明这条路径是通的,而且已经被走过。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>未来 12–24 个月内(即 2025 年中至 2026 年中),关键 AGI 突破将泄露给中方。</b></div>
+  <span class="verdict v-mid">🟡 部分验证(窗口已到期,无公开确证)</span>
+  <p>窗口内没有任何被公开确认的前沿算法机密外泄事件;唯一的 AI 经济间谍定罪(Ding 案)标的是基础设施机密,且行为发生于窗口开始之前。更重要的是出现了一个结构性反例:2025 年初 DeepSeek 以公开可复核的技术路线(MLA、无辅助损失负载均衡、多 token 预测、纯 RL 激发推理)在远低于前沿成本的条件下逼近第一梯队,说明关键突破可被独立重新发现,而非必须窃取。由于成功窃密本身不可观测,本条无法被严格证伪;但"锁住实验室能买到决定性时间"这一隐含前提,已被独立创新的事实削弱。</p>
+  <div class="src">来源:<a href="https://arxiv.org/abs/2412.19437" target="_blank" rel="noopener">DeepSeek-V3 Technical Report(arXiv:2412.19437)</a> · <a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener">DeepSeek-R1(arXiv:2501.12948)</a> · <a href="https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology" target="_blank" rel="noopener">Ding 案定罪(美国司法部,2026-01)</a></div>
+</div>
+
+<h2><span class="no">4.4</span>实验室做了什么:安保确实升级了,但升级的逻辑不同</h2>
+<p>他呼吁的"超级安保"包含具体清单:分级授权、最小知情范围、人员背景审查、隔离与监控、彻底翻新的信息安全实践,并以量化交易机构为参照系——那些公司同样掌握着"一小时对话就能让 alpha 归零"的秘密,却守住了它们。</p>
+<p>两年后,前沿实验室确实动了。以公开文档最完整的 Anthropic 为例:其《负责任扩展政策》定义了分级的 AI 安全等级,并在 2025 年 5 月随 Claude Opus 4 发布启用了 ASL-3 安保标准——其中"安保"一侧的目标被明确写为提高模型权重被窃取的难度,配套措施包括多级权限与数据分级、按角色的细粒度访问控制、按资产类型的多层隔离以降低攻击影响半径与内部人风险,乃至部署假权重蜜罐作为高精度入侵检测。这些措施与他清单上的条目高度重合。</p>
+<p>但驱动力不同,这个差别很重要。实验室的安保等级挂钩的是<em>模型自身的危险能力</em>(以 CBRN 等灾难性滥用风险为触发阈值),而不是他主张的<em>国家竞争中的资产价值</em>。两套逻辑在措施上大量重叠,在触发条件上却完全不同:按前者,只有当模型危险到一定程度才需要升级;按后者,只要对手足够强大就必须升级。这解释了为什么安保升级来得比他期望的晚——它等的不是威胁,而是能力。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>实验室安保停留在"随便一家创业公司"水平,远不足以应对国家级对手。</b></div>
+  <span class="verdict v-mid">🟡 部分验证</span>
+  <p>2024 年的判断成立,但此后有实质进展。Anthropic 的《负责任扩展政策》建立了分级安全标准,并于 2025 年 5 月随 Claude Opus 4 启用 ASL-3 安保标准,明确以"提高权重窃取难度"为目标,措施涵盖多级权限与数据分级、按角色细粒度访问控制、多层隔离以限制攻击影响半径与内部人风险,并部署假权重蜜罐用于入侵检测——与他开出的清单高度重合。但触发逻辑与他的主张不同:实验室把安保等级挂钩模型自身的危险能力阈值,而非国家竞争中的资产价值,因此升级节奏由能力而非威胁决定。是否已足以抵御国家级对手,无公开证据可判定。</p>
+  <div class="src">来源:<a href="https://www.anthropic.com/news/activating-asl3-protections" target="_blank" rel="noopener">Activating AI Safety Level 3 protections(Anthropic,2025-05)</a> · <a href="https://www.anthropic.com/responsible-scaling-policy" target="_blank" rel="noopener">Responsible Scaling Policy(Anthropic)</a></div>
+</div>
+
+<h2><span class="no">4.5</span>政府介入:方向走反了</h2>
+<p>本章最强的政策主张是:达到能抵御国家级对手的安保水平,私营部门单独做不到,最终需要政府项目级的介入。他甚至引用了一位安全专家的估计——即便私营部门全力冲刺,若中方把窃取 AGI 权重列为头号优先级,仍大概率能得手;要把这个概率压到个位数,基本上只能靠政府项目。</p>
+<p>两年后,美国在<b>模型权重</b>这一维度上的政策方向是放松,而不是收紧。2025 年 1 月 15 日发布的《人工智能扩散框架》(AI Diffusion Rule)是第一份把先进模型权重与高性能计算芯片一并纳入全球分层出口管制的规则;而在它正式生效前两天,商务部于 2025 年 5 月 13 日宣布撤销,理由是该规则会抑制美国创新并损害外交努力。此后针对中国大陆及港澳的既有芯片管制仍然保留,但那份唯一试图给"权重"上锁的联邦框架被收回了。</p>
+<p>换句话说:他呼吁的是"把模型权重当成核机密来管",现实给出的是"把模型权重从管制清单上拿下来"。这不是执行不到位,而是政策方向的反向选择——决策者更担心的是管制拖慢美国自身的扩散速度。这条 ❌ 与第 6 章"The Project"的对账互为镜像:两处都指向同一个事实——2024–26 年美国的实际路线是<em>加速市场化</em>而非<em>国家化</em>。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>AGI 级安保只有靠政府介入才能实现,模型权重应获得国家安全资产级别的管制。</b></div>
+  <span class="verdict v-no">❌ 未验证(政策方向相反)</span>
+  <p>两年内未出现他所设想的政府级安保项目。在权重管制这一具体维度上,方向是反的:2025 年 1 月 15 日发布的 AI Diffusion Rule 是首份将先进模型权重与高性能计算芯片一并纳入分层出口管制的联邦框架,却在生效前两天由商务部于 2025 年 5 月 13 日撤销,官方理由为该规则抑制美国创新、损害外交努力。对中国大陆及港澳的既有芯片管制仍然保留,但唯一针对权重的框架被收回。决策重心落在避免拖慢美国自身扩散,而非把权重当作国家机密封存。</p>
+  <div class="src">来源:<a href="https://www.wilmerhale.com/en/insights/client-alerts/20250515-us-export-controls-on-ai-diffusion-officially-paused-but-new-guidance-elevates-risk-for-ai-related-exports" target="_blank" rel="noopener">AI Diffusion Rule 撤销与新指引(WilmerHale,2025-05-15)</a> · <a href="https://www.ussc.edu.au/the-us-ai-diffusion-rule" target="_blank" rel="noopener">AI Diffusion Rule 始末与影响(United States Studies Centre)</a></div>
+</div>
+
+<h2><span class="no">4.6</span>当时的批评:三种反对</h2>
+<p><b>其一,威胁夸大论。</b>批评者认为把商业实验室类比曼哈顿计划是过度军事化。两年后这条批评显著弱化——Ding 案给出了法庭级别的事实。但它变形后仍然有效:承认间谍威胁真实,不等于承认"因此需要国家接管"。</p>
+<p><b>其二,安保与开放的取舍。</b>他的清单意味着大幅收缩研究开放性:隔离、限制人员流动、减少公开发表。反对者指出,现代 AI 的进展高度依赖公开交流,而封闭会同时拖慢自己。这条批评在 2026 年得到了一个意外的经验支撑:开放权重生态成为能力扩散的主渠道之一,而扩散的速度说明<em>封锁的收益在贬值</em>。</p>
+<p><b>其三,谁来定义"我们"。</b>他的框架预设了清晰的美中二元阵营,但前沿实验室是跨国组织,研究者国籍多元,资本来源全球化。把安保推到"国家机密"级别,在操作上意味着按国籍分配信任——这在当时就被批评为既不道德也不可行。Ding 案不幸地为这条批评提供了最难处理的素材:它既证明了内部人风险真实存在,也预示了应对方式可能滑向系统性的身份怀疑。这是本章留给读者的、没有干净答案的问题。</p>
+<p>把本章的四条裁决并排看,会浮现一个规律:凡是关于<b>威胁</b>的描述性判断,他基本对了;凡是关于<b>应对</b>的规范性主张,现实都没有照做。这个"诊断准、处方落空"的模式,会在接下来的第 5 章和第 6 章连续出现,并在第 7 章成为全书总评的核心结构。</p>
+
+<h2><span class="no">4.7</span>本章记分牌</h2>
+<table>
+  <tr><th>原文主张</th><th>裁决</th></tr>
+  <tr><td>国家级间谍威胁被低估,机密正在实质外流</td><td><span style="color:var(--ok)">✅ 已验证</span></td></tr>
+  <tr><td>12–24 个月内关键 AGI 突破泄露给中方</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
+  <tr><td>实验室安保仅达"创业公司"水平</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
+  <tr><td>需政府级安保介入,权重应按国家机密管制</td><td><span style="color:var(--no)">❌ 未验证</span></td></tr>
+</table>
+<p class="cn" style="font-family:var(--sans);font-size:14px">本表与本章 4 张对账卡一一对应;全书总记分牌见<a href="ch07.html">第 7 章</a>。</p>
+
+<h2><span class="no">4.8</span>本章术语(入总表)</h2>
+<table>
+  <tr><th>术语</th><th>释义</th><th></th></tr>
+  <tr><td><span class="term">model weights</span></td><td>模型权重:训练完成的参数集合,物理上就是一个文件——本章全部论证的起点。</td><td>§4.1</td></tr>
+  <tr><td><span class="term">algorithmic secrets</span></td><td>算法机密:让训练跑通的关键技术判断,多数不落于文档,而存在于少数人的经验中。</td><td>§4.1</td></tr>
+  <tr><td><span class="term">insider threat</span></td><td>内部人威胁:由有合法访问权限者造成的泄密风险,Ding 案是其教科书式样本。</td><td>§4.2</td></tr>
+  <tr><td><span class="term">RSP / ASL</span></td><td>负责任扩展政策与 AI 安全等级:按模型危险能力分级触发的安保与部署标准。</td><td>§4.4</td></tr>
+  <tr><td><span class="term">AI Diffusion Rule</span></td><td>人工智能扩散框架:2025-01 发布、同年 5 月撤销的美国分层出口管制规则,首次将模型权重纳入管制对象。</td><td>§4.5</td></tr>
+</table>
+
+<footer>
+  <p><b>原文对应章节:</b><a href="https://situational-awareness.ai/lock-down-the-labs/" target="_blank" rel="noopener">Part IIIb: Lock Down the Labs — Security for AGI(situational-awareness.ai)</a></p>
+  <p><b>引用说明:</b>本导读为原创分析与评论,不含原文翻译;所有直接引用不超过一句并注明出处。原文版权归 Leopold Aschenbrenner 所有,阅读全文请访问上方链接。</p>
+  <p><b>对账来源:</b>本章各对账卡片的来源均已逐条核实,并汇总于<a href="appendix-d.html">附录 D · 参考来源</a>。</p>
+  <p class="nav"><a href="ch03.html">← 第 3 章 · 万亿美元集群</a><a href="ch05.html">第 5 章 · Superalignment →</a></p>
+</footer>
+
+</div>
+</body>
+</html>
