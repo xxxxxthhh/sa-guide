@@ -48,6 +48,16 @@
   th{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--text-dim);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
   td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
   td:last-child{white-space:nowrap;font-family:var(--mono);font-size:13px}
+  th,td{overflow-wrap:break-word}
+
+  /* ---------- 窄屏:术语与表格不得撑出横向滚动 ---------- */
+  @media (max-width:560px){
+    .wrap{padding:0 16px 72px}
+    .term{white-space:normal}
+    table{font-size:13.5px}
+    th,td{padding:10px 7px}
+    td:last-child{white-space:normal}
+  }
 
   footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:13.5px;color:var(--text-dim);line-height:2}
   .nav{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}

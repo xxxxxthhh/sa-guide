@@ -16,12 +16,12 @@
   <h1>第 3 章 · 奔向万亿美元集群</h1>
   <div class="sub">对应原文 Part IIIa: Racing to the Trillion-Dollar Cluster。全书最"可交易"的一章——也是他本人押上真金白银的那一章。两年后,这里有他命中最准的判断,也有他唯一一条带日期、可直接判负的预测。</div>
   <svg class="trend" viewBox="0 0 720 130" role="img" aria-label="资本开支示意:2024 至 2027 年主要厂商 AI 相关资本开支逐级抬升">
-    <line x1="52" y1="106" x2="700" y2="106" stroke="#2a3542"/>
-    <line x1="52" y1="106" x2="52" y2="14" stroke="#2a3542"/>
-    <rect x="96"  y="82" width="58" height="24" fill="#7fb4e6" opacity=".55"/>
-    <rect x="222" y="66" width="58" height="40" fill="#7fb4e6" opacity=".7"/>
-    <rect x="348" y="42" width="58" height="64" fill="#e8a33d" opacity=".8"/>
-    <rect x="474" y="20" width="58" height="86" fill="#e8a33d"/>
+    <line style="stroke:var(--line)" x1="52" y1="106" x2="700" y2="106"/>
+    <line style="stroke:var(--line)" x1="52" y1="106" x2="52" y2="14"/>
+    <rect style="fill:var(--concept)" x="96"  y="82" width="58" height="24" opacity=".55"/>
+    <rect style="fill:var(--concept)" x="222" y="66" width="58" height="40" opacity=".7"/>
+    <rect style="fill:var(--accent)" x="348" y="42" width="58" height="64" opacity=".8"/>
+    <rect style="fill:var(--accent)" x="474" y="20" width="58" height="86"/>
     <text x="58" y="18">AI 资本开支(示意)</text>
     <text x="104" y="120">2024</text>
     <text x="230" y="120">2025</text>
@@ -66,16 +66,16 @@
 <h2><span class="no">3.4</span>那条带日期的预测,以及它为什么没兑现</h2>
 <p>全文绝大多数预测都留有余地——"strikingly plausible""可能""大约"。但在讨论收入能否支撑投资时,他给出了一个罕见的、带具体门槛与具体日期的里程碑:</p>
 <blockquote><span class="q-en">"A key milestone for AI revenue that I like to think about is: when will a big tech company (Google, Microsoft, Meta, etc.) hit a $100B revenue run rate from AI (products and API)?"</span><br>中文释义:我常用来衡量 AI 收入的一个关键里程碑是:哪家大型科技公司会最先把 AI(产品与 API)的收入年化跑到 1000 亿美元?</blockquote>
-<p>他随后按"每 6 个月翻倍"外推,给出的答案是 2026 年年中,并配了一个具体的实现路径:微软 Office 约 3.5 亿付费用户里,若有三分之一愿意每月多付 100 美元买 AI 加购,这个数字就成立了。</p>
+<p>他随后按"每 6 个月翻倍"外推,给出的答案是 2026 年年中,并配了一个具体的实现路径:微软 Office 约 3.5 亿付费用户里,若有三分之一愿意每月多付 100 美元买 AI 加购,这个数字就成立了。需要如实指出:他给这次外推加了限定词——原句写的是"very naively extrapolating"(非常粗略地外推),即他本人也把它标记为一次粗算而非精确预测。</p>
 <p>这是全书唯一一条<b>既有明确数量门槛、又有明确到期日、且已经到期</b>的预测。它没有兑现,而且没兑现的方式比"没兑现"本身更有信息量。</p>
-<p>第一,门槛远未达到:截至 2026 年年中,没有任何一家大型科技公司公开披露 AI 收入达到 1000 亿美元年化。第二,增长的主角换人了:跑得最快的是 AI 原生公司而非大厂加购——Anthropic 的年化收入在 2026 年 5 月约达 470 亿美元,OpenAI 在 2026 年一季度前后约为 250 亿美元年化,两家相加仍不足单家 1000 亿的门槛。第三,也是最关键的:他设想的变现机制(把 AI 作为办公套件的月度加购卖给存量席位)并不是实际的增长引擎;真正的引擎是编码 agent 与 API 调用,即"按产出计费"而非"按人头加价"。</p>
-<p>这条 ❌ 的意义不在于抓住了作者的一个错误,而在于它<em>正好落在整条推理链的承重点上</em>。Part IIIa 的全部论证依赖"收入会追上投资";收入没有按他的时刻表追上,而资本开支却按他的时刻表(甚至更快)膨胀了。二者之间的缺口,就是 2024 年 6 月 Sequoia 的 David Cahn 提出的"6000 亿美元问题"——他当时把这个问题当作可以被增长化解的暂时现象。两年后,缺口没有闭合,反而随着资本开支翻倍而扩大。而这个缺口的市场表现形式,就是终章里那场发生在 2026 年 7 月、让他单月亏掉六成七的估值重定价。</p>
+<p>第一,门槛远未达到:截至 2026 年年中,没有任何一家大型科技公司公开披露 AI 收入达到 1000 亿美元年化。第二,增长的主角换人了:跑得最快的是 AI 原生公司而非大厂加购——Anthropic 在 2026 年第二季度的收入据报道约为 109 亿美元(第三方追踪机构 Sacra 给出的 5 月年化口径约为 470 亿美元),OpenAI 在 2026 年年初约为 250 亿美元年化。无论用哪个口径,两家相加都不足单家 1000 亿的门槛,而且它们都不是他所指的"大型科技公司"。第三,也是最关键的:他设想的变现机制(把 AI 作为办公套件的月度加购卖给存量席位)并不是实际的增长引擎;真正的引擎是编码 agent 与 API 调用,即"按产出计费"而非"按人头加价"。</p>
+<p>这条 ❌ 的意义不在于抓住了作者的一个错误,而在于它<em>正好落在整条推理链的承重点上</em>。Part IIIa 的全部论证依赖"收入会追上投资";收入没有按他的时刻表追上,而资本开支却按他的时刻表(甚至更快)膨胀了。二者之间的缺口,就是 2024 年 6 月 Sequoia 的 David Cahn 提出的"6000 亿美元问题"——他当时把这个问题当作可以被增长化解的暂时现象。两年后,缺口没有闭合,反而随着资本开支翻倍而扩大。而这个缺口的市场表现形式,就是<a href="ch08-fund.html">终章</a>里那场发生在 2026 年 7 月的估值重定价——它在一个月内把基金的资产规模从约 450 亿美元打到约 100 亿美元。</p>
 <div class="audit">
   <div class="audit-tag">对账 · 2026</div>
-  <div class="claim">原文主张:<b>按每 6 个月翻倍外推,某家大型科技公司将在 2026 年年中达到 1000 亿美元的 AI 年化收入。</b></div>
+  <div class="claim">原文主张:<b>按每 6 个月翻倍(原文标记为"非常粗略地")外推,某家大型科技公司将在 2026 年年中达到 1000 亿美元的 AI 年化收入。</b></div>
   <span class="verdict v-no">❌ 未验证</span>
-  <p>截至 2026 年 8 月,无任何大型科技公司公开披露 AI 收入达到 1000 亿美元年化水位。领跑者是 AI 原生公司:Anthropic 年化收入在 2026 年 5 月约 470 亿美元,OpenAI 在 2026 年年初约 250 亿美元年化并在此后数月增速放缓,两者相加仍低于单家门槛。他设想的实现路径(Office 存量席位以约 100 美元/月加购 AI)亦未成为主要增长来源,实际引擎是编码 agent 与 API 用量计费。与此同时资本开支按其外推甚至更快地膨胀,使 2024 年 6 月 Sequoia 提出的"6000 亿美元问题"缺口不减反增——这正是终章那场估值重定价的账面根源。</p>
-  <div class="src">来源:<a href="https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html" target="_blank" rel="noopener">Anthropic 收入(CNBC,2026-05-20)</a> · <a href="https://sacra.com/c/openai/" target="_blank" rel="noopener">OpenAI 收入追踪(Sacra)</a> · <a href="https://epoch.ai/gradient-updates/openai-is-projecting-unprecedented-revenue-growth" target="_blank" rel="noopener">OpenAI 收入预测分析(Epoch AI)</a> · <a href="https://sequoiacap.com/article/ais-600b-question/" target="_blank" rel="noopener">AI's $600B Question(Sequoia,2024-06-20)</a></div>
+  <p>截至 2026 年 8 月,无任何大型科技公司公开披露 AI 收入达到 1000 亿美元年化水位。领跑者是 AI 原生公司而非他点名的大厂:Anthropic 2026 年第二季度收入据报道约 109 亿美元(Sacra 给出的 5 月年化口径约 470 亿美元),OpenAI 2026 年年初约 250 亿美元年化并在此后数月增速放缓,两者相加仍低于单家门槛。他设想的实现路径(Office 存量席位以约 100 美元/月加购 AI)亦未成为主要增长来源,实际引擎是编码 agent 与 API 用量计费。需说明的是,原文对这次外推加了"very naively"的限定,故本条裁决针对的是该里程碑本身是否达成,而非指其为精确预测。与此同时资本开支按其外推甚至更快地膨胀,使 2024 年 6 月 Sequoia 提出的"6000 亿美元问题"缺口不减反增——这正是终章那场估值重定价的账面根源。</p>
+  <div class="src">来源:<a href="https://www.cnbc.com/2026/05/20/anthropic-revenue-explosive-growth-ipo-profitable-quarter.html" target="_blank" rel="noopener">Anthropic 二季度收入约 109 亿美元(CNBC,2026-05-20)</a> · <a href="https://sacra.com/c/anthropic/" target="_blank" rel="noopener">Anthropic 年化收入追踪(Sacra)</a> · <a href="https://sacra.com/c/openai/" target="_blank" rel="noopener">OpenAI 收入追踪(Sacra)</a> · <a href="https://epoch.ai/gradient-updates/openai-is-projecting-unprecedented-revenue-growth" target="_blank" rel="noopener">OpenAI 收入预测分析(Epoch AI)</a> · <a href="https://sequoiacap.com/article/ais-600b-question/" target="_blank" rel="noopener">AI's $600B Question(Sequoia,2024-06-20)</a></div>
 </div>
 
 <h2><span class="no">3.5</span>天然气赌注:方向对了,阻力估错了</h2>
@@ -95,7 +95,7 @@
 <p>Part IIIa 面对的主要批评只有一条,但它足够重:收入撑不撑得起这些投资。2024 年 6 月——与本文几乎同月——Sequoia 的 David Cahn 发表了《AI 的 6000 亿美元问题》,用一个简单的算式给出缺口:以英伟达的收入跑速为基数,乘以 2 还原数据中心总成本(GPU 约占一半,其余是电力、厂房、备用电源等),再乘以 2 还原终端用户 50% 的毛利要求,得到整个生态需要的年收入规模;把它与当时约 1000 亿美元的实际 AI 收入相比,缺口约六倍。</p>
 <p>他与 Cahn 其实共享同一个模型,分歧只在一个参数上:收入曲线的斜率。他假设 6 个月翻倍可以延续,于是缺口是"暂时的";Cahn 不假设,于是缺口是"待解释的"。两年后的裁决是分裂的——收入确实涨了很多(从约 10 亿量级到数百亿量级),但没有涨到他设定的门槛;而资本开支涨得比双方当时的预期都快。结果是缺口在绝对值上扩大了。</p>
 <p>还有一条当时声量不大、现在看很关键的批评:<b>折旧节奏</b>。如果加速卡的经济寿命明显短于建筑物的会计寿命,那么"资本开支/收入"这个比值就会系统性地低估真实成本。这条批评在 2024 年基本无人认真对待,却在 2025–26 年成为质疑 AI 资产负债表最有力的角度之一。它没有出现在原文里,是 Part IIIa 视野的一个真实盲区。</p>
-<p>把三条线索并排放:电力判断 ✅、资本开支判断 ✅、收入判断 ❌。一个把前两条当作交易依据、并用杠杆放大的人,会在两年里赚到惊人的钱;而第三条会在某个月份一次性把账结清。这就是终章要讲的全部故事,也是本书暗线"认知 → 下注"最锋利的一处切口:<em>三分之二的正确率,在无杠杆时是优秀,在四倍杠杆时是清算</em>。</p>
+<p>把三条线索并排放:电力判断 ✅、资本开支判断 ✅、收入判断 ❌。一个把前两条当作交易依据、并用杠杆放大的人,会在两年里赚到惊人的钱;而第三条会在某个月份一次性把账结清。这就是终章要讲的全部故事,也是本书暗线"认知 → 下注"最锋利的一处切口:<em>四条判断里对了三条,在无杠杆时是优秀,在四倍杠杆时是清算</em>。</p>
 
 <h2><span class="no">3.7</span>本章记分牌</h2>
 <table>
