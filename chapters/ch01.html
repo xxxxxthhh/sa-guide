@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 1 章 · 从 GPT-4 到 AGI:数数量级 —《Situational Awareness 深度导读》样章</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Situational Awareness 深度导读 · 样章 v0.1</div>
+  <h1>第 1 章 · 从 GPT-4 到 AGI:数数量级</h1>
+  <div class="sub">对应原文 Part I: From GPT-4 to AGI — Counting the OOMs。全书对账密度最高的一章:三条曲线、一堵数据墙,和那句著名的 2027 预测。</div>
+  <svg class="trend" viewBox="0 0 720 120" role="img" aria-label="三条曲线示意:算力、算法效率、unhobbling 在对数坐标上叠加">
+    <line x1="40" y1="100" x2="700" y2="100" stroke="#2a3542"/>
+    <line x1="40" y1="100" x2="40" y2="10" stroke="#2a3542"/>
+    <path d="M40 95 L700 55" stroke="#7fb4e6" stroke-width="2" fill="none"/>
+    <path d="M40 95 L700 35" stroke="#4cc38a" stroke-width="2" fill="none"/>
+    <path d="M40 95 L700 15" stroke="#e8a33d" stroke-width="2.5" fill="none"/>
+    <text x="46" y="14">effective compute(log)</text>
+    <text x="560" y="52">+ 物理算力</text>
+    <text x="560" y="32">+ 算法效率</text>
+    <text x="560" y="12">+ unhobbling</text>
+    <text x="660" y="114">2027 →</text>
+  </svg>
+</header>
+
+<h2><span class="no">1.1</span>论点地图:一条只有四步的推理链</h2>
+<p>整个 Part I 的论证结构其实非常紧凑,可以压缩成四步:</p>
+<p><b>第一步,回望。</b>GPT-2(2019)到 GPT-4(2023)的四年,模型从"勉强连贯的学龄前儿童"跃迁到"聪明的高中生"。这不是修辞,而是他用来锚定能力刻度的类比坐标系。</p>
+<p><b>第二步,分解。</b>这次跃迁可以被拆成三个可量化的驱动因素:物理算力(每年约增长半个数量级)、算法效率(每年也约半个数量级,相当于"免费算力")、以及 <span class="term">unhobbling</span><span class="cn">(解除束缚:RLHF、思维链、工具使用、更长上下文——把底层能力释放出来的那类改进)</span>。</p>
+<p><b>第三步,外推。</b>如果三条曲线延续到 2027,累计又是一次 GPT-2→GPT-4 量级的跃迁(约 5 个 <span class="term">OOM</span><span class="cn">(order of magnitude,数量级)</span>的 effective compute,外加 unhobbling 收益)。</p>
+<p><b>第四步,落点。</b>高中生再往上跳一个"GPT-2→GPT-4",落在哪?他的答案:能够完成 AI 研究员/工程师工作的系统——也就是 AGI。他对这件事的措辞是 <span class="q-en" style="font-family:var(--mono);font-size:14.5px">"strikingly plausible"</span>(惊人地可能),而非"必然"——这个措辞上的保留,是后文批评与辩护双方反复争夺的阵地。</p>
+<div class="slot">【引用位 ×2:构建阶段从原文 Part I 引言与结论段各取一句原句(≤1 句/处),配中文释义插入本节。】</div>
+<p>值得注意的是这条推理链的形状:它<em>不依赖任何新的科学突破</em>,只依赖"趋势延续"。这既是它的说服力来源(每一步都有历史数据背书),也是它全部的脆弱性所在(任何一条曲线弯折,结论就塌)。导读的对账工作,本质上就是逐条检查这三条曲线在 2024–2026 有没有弯。</p>
+
+<h2><span class="no">1.2</span>第一条曲线:物理算力</h2>
+<p>他的论证:前沿训练算力长期以每年约 0.5 OOM 的速度增长,资金和意愿都不是瓶颈——真正的约束会逐渐从"钱"转移到"电力和芯片产能"(这个话题在 Part IIIa 全面展开,本章只是埋线)。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>前沿算力将持续每年约半个数量级的扩张,GW 级集群将成为现实。</b></div>
+  <span class="verdict v-ok">✅ 已验证(方向)</span>
+  <p>算力扩张曲线在这两年不仅没有弯折,甚至超出多数怀疑者的预期:2025 年 1 月公告的 Stargate 项目计划投入数千亿美元建设 AI 基础设施;xAI 的 Colossus 集群在一年内从 10 万卡级扩张到数十万卡级;"电力是新瓶颈"从他文中的小众论断变成了 2025–26 年行业与政策讨论的主流共识。</p>
+  <div class="src">来源槽:Stargate 官方公告(2025-01)/ 各超大规模厂商 capex 指引 / 电力约束相关行业报告 —— 链接由构建阶段核实补全</div>
+</div>
+
+<h2><span class="no">1.3</span>第二条曲线:算法效率</h2>
+<p>这条曲线最容易被外行忽略,但他给了它与物理算力同等的权重:达到同一能力水平所需的算力,每年下降约半个数量级。换句话说,即使芯片一块不加,模型也在"自动变便宜"。他把这称为 effective compute 的隐形分量。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>算法效率将继续贡献每年约 0.5 OOM 的等效算力增长。</b></div>
+  <span class="verdict v-ok">✅ 已验证</span>
+  <p>2025 年初 DeepSeek V3/R1 以远低于西方前沿实验室的训练成本逼近第一梯队能力,是这条曲线最有戏剧性的公开注脚;推理成本方面,同等能力的 API 价格在两年间下降了一个数量级以上。有趣的是,这条曲线的成立同时也<em>削弱</em>了他在 Part IIId 中"算力差距=能力差距"的地缘判断——算法效率是会扩散的。这个内在张力我们留到第 6 章展开。</p>
+  <div class="src">来源槽:DeepSeek V3/R1 技术报告(2024-12/2025-01)/ 主流 API 价格历史曲线 —— 链接由构建阶段核实补全</div>
+</div>
+
+<h2><span class="no">1.4</span>第三条曲线:Unhobbling,被低估的主角</h2>
+<p>回头看,这是 Part I 预测力最强的部分。他的观点:基座模型的原始能力(raw capabilities)远超我们从聊天界面里看到的表现,而把这些能力释放出来的改进——从 RLHF、<span class="term">CoT</span><span class="cn">(chain-of-thought,思维链)</span>到工具使用、长上下文,再到 agent 化脚手架——每一项都相当于凭空多出若干等效算力。他特别点名了两个当时尚未兑现的方向:<b>test-time compute overhang</b>(让模型"思考更久"的巨大未开发空间)和从聊天机器人到"drop-in remote worker"(即插即用的远程员工)的形态跃迁。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>test-time compute 是一个巨大的待释放空间。</b></div>
+  <span class="verdict v-ok">✅ 已验证(几乎是点名命中)</span>
+  <p>文章发布三个月后,OpenAI o1(2024-09)开启推理模型范式;此后"让模型思考更久换取能力"成为全行业的主要 scaling 方向之一。这是全文技术预判中兑现最快、最干净的一条。</p>
+  <div class="src">来源槽:o1 发布说明(2024-09)/ 各家推理模型发布时间线 —— 链接由构建阶段核实补全</div>
+</div>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>模型将从聊天机器人进化为 agent,最终成为"即插即用的远程员工"。</b></div>
+  <span class="verdict v-mid">🟡 部分验证</span>
+  <p>前半句已成现实:编码 agent(如 Claude Code 一类工具)在 2025–26 年成为软件开发的日常基础设施,computer use 类能力商用化,METR 的测量显示模型可自主完成的任务时长大约每 7 个月翻一倍。后半句尚未兑现:截至 2026 年中,模型是极强的"任务执行者",但还不是可以整职位交付的"远程员工"——长程可靠性、跨日记忆与真实组织环境的适配仍是断点。</p>
+  <div class="src">来源槽:METR 任务时长研究(2025-03 及后续更新)/ 编码 agent 采用率数据 —— 链接由构建阶段核实补全</div>
+</div>
+
+<h2><span class="no">1.5</span>数据墙:他自己承认的最大变数</h2>
+<p>Part I 并非全是顺风论证。他专门讨论了 <span class="term">data wall</span><span class="cn">(数据墙:互联网高质量文本即将被用尽)</span>,承认这是外推的最大风险,同时下注:合成数据、自博弈(self-play)和强化学习会绕过它——理由是人类也不是靠读完互联网变聪明的。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>数据墙不会终结 scaling,合成数据与 RL 将绕过它。</b></div>
+  <span class="verdict v-mid">🟡 部分验证</span>
+  <p>在可验证奖励的领域(数学、代码),RL + 合成数据的路线大获成功——2025 年 7 月,实验模型在 IMO 达到金牌线成绩,数学与编程基准全面突破。但在奖励难以验证的开放域(长篇写作质量、真实世界判断),"绕过数据墙"的证据仍然模糊。准确的说法是:数据墙被<em>打穿了几个洞</em>,而非整体拆除。</p>
+  <div class="src">来源槽:IMO 金牌线结果报道(2025-07)/ RLVR 相关论文 —— 链接由构建阶段核实补全</div>
+</div>
+
+<h2><span class="no">1.6</span>那句著名的预测,以及它现在的状态</h2>
+<p>Part I 的落点——2027 年出现能做 AI 研究员/工程师工作的模型——是全书被引用最多、也最容易被简化误读的一句。注意他的原始表述有两层缓冲:一是"strikingly plausible"而非确定性预言;二是他定义的里程碑是<em>特定职业能力</em>(自动化 AI 研发),而不是哲学意义上的通用智能。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>2027 年,模型有望胜任 AI 研究员/工程师的工作。</b></div>
+  <span class="verdict v-tbd">⏳ 尚无法判定(距离到期还有约 17 个月)</span>
+  <p>中期检查:方向对,进度存疑。支持侧——前沿实验室公开承认大部分代码已由 AI 参与撰写,AI 加速 AI 研发的飞轮初步转动;基准侧模型已在多数专家级考试类评测上达到或超过人类专家。存疑侧——"研究员的工作"里最难的部分(提出好问题、数月尺度的项目自主性、从失败中改变研究方向)尚无模型级别的公开证据。本条对账将在 2027 版修订中给出终审。</p>
+  <div class="src">来源槽:各实验室关于内部 AI 代码占比的公开表述 / 长程自主性评测 —— 链接由构建阶段核实补全</div>
+</div>
+
+<h2><span class="no">1.7</span>当时的批评:四种反对意见及其现状</h2>
+<p><b>其一,外推主义。</b>"在对数坐标上画直线"是当时最响亮的批评(Gary Marcus 等):历史趋势不构成未来保证,S 曲线的顶部在到达之前长得和指数一模一样。两年后的裁决:曲线暂时没弯,但这个批评在逻辑上永不失效——它只会被逐年推迟,不会被证伪。</p>
+<p><b>其二,基准 ≠ 工作。</b>Chollet 等人主张,考试型基准的饱和不代表通用能力。这条批评在 2026 年看反而<em>升值</em>了:基准全面爆表与"drop-in remote worker"尚未出现之间的落差,恰好落在这个批评预留的空间里。</p>
+<p><b>其三,数据质量论。</b>合成数据会导致模型退化(model collapse)的担忧,在可验证域被实践否决,在开放域仍是活的争论。</p>
+<p><b>其四,扩散滞后论。</b>即便能力到位,经济与组织的吸收速度远慢于技术曲线。这条在 2026 年基本被验证为正确——但它攻击的是"影响时间表"而非"能力时间表",与他的主张实际上错身而过。</p>
+<p>最后留意第一条批评的特殊性质:"直线外推"的反对在逻辑上不可证伪,只能被逐年推迟。它无法告诉你曲线会不会弯,但它能约束的是<em>你基于曲线所做承诺的不可逆程度</em>——这条线索,将在终章 Aschenbrenner 本人 400% 杠杆的基金复盘中收束。</p>
+
+<h2><span class="no">1.8</span>本章记分牌</h2>
+<table>
+  <tr><th>原文主张</th><th>裁决</th></tr>
+  <tr><td>物理算力持续 ~0.5 OOM/年扩张,GW 级集群出现</td><td><span style="color:var(--ok)">✅ 已验证</span></td></tr>
+  <tr><td>算法效率持续 ~0.5 OOM/年</td><td><span style="color:var(--ok)">✅ 已验证</span></td></tr>
+  <tr><td>test-time compute 是巨大待释放空间</td><td><span style="color:var(--ok)">✅ 已验证</span></td></tr>
+  <tr><td>agent 化 → drop-in remote worker</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
+  <tr><td>数据墙将被合成数据 + RL 绕过</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
+  <tr><td>2027:模型胜任 AI 研发工作</td><td><span style="color:var(--tbd)">⏳ 待 2027 终审</span></td></tr>
+</table>
+<p class="cn" style="font-family:var(--sans);font-size:14px">本表由各对账卡片自动聚合(构建阶段实现);全书总记分牌见第 7 章。</p>
+
+<h2><span class="no">1.9</span>本章术语(入总表)</h2>
+<table>
+  <tr><th>术语</th><th>释义</th><th></th></tr>
+  <tr><td><span class="term">OOM</span></td><td>order of magnitude,数量级(10 倍)。全书的基本计量单位。</td><td>§1.1</td></tr>
+  <tr><td><span class="term">effective compute</span></td><td>等效算力:物理算力 × 算法效率的乘积。</td><td>§1.1</td></tr>
+  <tr><td><span class="term">unhobbling</span></td><td>解除束缚:不增加基座能力、只释放已有能力的改进(RLHF、CoT、工具、agent 脚手架)。</td><td>§1.4</td></tr>
+  <tr><td><span class="term">data wall</span></td><td>数据墙:高质量互联网文本枯竭对 scaling 的潜在硬约束。</td><td>§1.5</td></tr>
+  <tr><td><span class="term">test-time compute</span></td><td>推理时算力:通过延长"思考"换取能力的范式。</td><td>§1.4</td></tr>
+</table>
+
+<footer>
+  <p><b>原文对应章节:</b><a href="https://situational-awareness.ai/from-gpt-4-to-agi/" target="_blank" rel="noopener">Part I: From GPT-4 to AGI — Counting the OOMs(situational-awareness.ai)</a></p>
+  <p><b>引用说明:</b>本导读为原创分析与评论,不含原文翻译;所有直接引用不超过一句并注明出处。原文版权归 Leopold Aschenbrenner 所有,阅读全文请访问上方链接。</p>
+  <p><b>对账来源:</b>本章各对账卡片的来源链接将在 Claude Code 构建阶段逐条核实后补全,汇总于附录 D。</p>
+</footer>
+
+</div>
+</body>
+</html>
