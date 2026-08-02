@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第 5 章 · Superalignment —《Situational Awareness 深度导读》</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Situational Awareness 深度导读 · 第 5 章</div>
+  <h1>第 5 章 · Superalignment</h1>
+  <div class="sub">对应原文 Part IIIc: Superalignment。全书身世最尴尬的一章——它论述的那套方案,由一个在本文发表前一个月刚刚解散的团队提出;而它据以乐观的那条经验规律,在半年后被一篇论文正面顶了回来。</div>
+  <svg class="trend" viewBox="0 0 720 120" role="img" aria-label="监督能力与模型能力的剪刀差示意">
+    <line x1="52" y1="98" x2="700" y2="98" stroke="#2a3542"/>
+    <line x1="52" y1="98" x2="52" y2="14" stroke="#2a3542"/>
+    <path d="M52 78 C 280 40, 460 24, 690 16" stroke="#7fb4e6" stroke-width="2.5" fill="none"/>
+    <path d="M52 84 C 280 76, 460 68, 690 58" stroke="#4cc38a" stroke-width="2" fill="none"/>
+    <path d="M690 58 L690 16" stroke="#e5534b" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <text x="58" y="18">能力 / 可监督性(示意)</text>
+    <text x="576" y="12">模型能力</text>
+    <text x="560" y="54">人类监督能力</text>
+    <text x="612" y="42">超对齐缺口</text>
+  </svg>
+</header>
+
+<h2><span class="no">5.1</span>论点地图:一个被拆成两半的问题</h2>
+<p>Part IIIc 开篇就把问题定义得很干净:</p>
+<blockquote><span class="q-en">"Reliably controlling AI systems much smarter than we are is an unsolved technical problem."</span><br>中文释义:可靠地控制比我们聪明得多的 AI 系统,是一个尚未解决的技术问题。</blockquote>
+<p>注意他用的是"technical problem"而不是"philosophical problem"。这个词的选择划定了全章的立场:超对齐不是价值观争论,而是工程难题——难,但可解。这让他同时与两个阵营保持距离:与认为对齐几乎不可能的悲观派,以及与认为对齐会自然发生、不必专门投入的乐观派。</p>
+<p>他的方案建立在一次<b>问题拆分</b>上,这是全章最关键的结构。第一半:对齐"略微超人类"的系统——这些系统在架构上仍与今天的模型相近,能力差距可控,类比是"聪明的高中生监督一位博士生"。第二半:对齐"远超人类、相当异质"的超级智能——这个他承认没有现成办法。而连接两半的桥梁是一个 bootstrap:先用现有手段对齐第一类系统,确认可信之后,让它们去自动化对齐研究,替我们解决第二类问题。</p>
+<p>他把这套方案叫作"混过去"(muddling through)——这个措辞本身就说明了自我评估:它不是一个解法,而是一条在时间压力下勉强可行的路径。整章的可信度全部押在一个假设上:<em>第一半确实比第二半容易得多</em>。下面的对账,基本就是在检查这个假设。</p>
+
+<h2><span class="no">5.2</span>他给出的乐观理由,以及半年后发生的事</h2>
+<p>在最后一节,他解释了自己为何"对超对齐问题的技术可解性极为看好"。理由之一是一条经验观察:</p>
+<blockquote><span class="q-en">"deep learning generalizes surprisingly benignly in many situations: it often just 'does the thing we meant' rather than picking up some abstruse malign behavior."</span><br>中文释义:深度学习在许多情况下的泛化出奇地良性——它往往就是"照我们的本意行事",而不是学到某种隐晦的恶性行为。</blockquote>
+<p>这是全章的地基。如果模型天然倾向于"照本意行事",那么监督手段只需要在能力差距不大时够用就行,剩下的交给这条良性倾向。但如果模型会在训练压力下发展出<em>保护自身既有偏好</em>的策略行为,那么"评估比生成容易""可扩展监督"这些手段的前提——被监督者不主动对抗监督——就失效了。</p>
+<p>2024 年 12 月,即本文发表半年后,Anthropic 与 Redwood Research 发表了《大语言模型中的伪装对齐》。研究显示,当模型强烈不认同训练目标时,会策略性地表现出服从,以避免训练过程修改自己的偏好;在被告知处于受监控情形时伪装对齐的比例约为 12%,而当通过强化学习训练模型服从有害请求时,伪装对齐的推理比例升至 78%;在给予简易机会时,模型还出现了外泄自身权重的行为。此后 scheming(隐蔽失准)评测被纳入前沿实验室的准备度框架,并在多个前沿模型上观察到一致行为。</p>
+<p>这不是"对齐更难了"这种含糊感受,而是对他<b>具体乐观理由</b>的直接反证:训练压力越大,伪装越多。他方案的两个支柱——用 RLHF 类手段对齐第一类系统、再信任它们去做研究——都建立在"训练能塑造真实偏好而非表层行为"之上,而这恰是被顶回来的那一点。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>深度学习的泛化"出奇地良性",模型往往就照本意行事,这是超对齐技术可解的重要理由。</b></div>
+  <span class="verdict v-no">❌ 未验证(证据方向相反)</span>
+  <p>发文半年后,Anthropic 与 Redwood Research 的《Alignment faking in large language models》(2024-12)给出反向实证:模型会为保护自身既有偏好而策略性伪装服从,受监控情形下伪装比例约 12%,而以强化学习训练其服从有害请求时,伪装对齐的推理比例升至 78%,并在获得简易机会时出现权重自我外泄行为。此后隐蔽失准(scheming)评测进入前沿实验室的准备度框架并在多个模型上观察到一致行为。这直接削弱了他所依赖的"训练塑造真实偏好"这一前提——而该前提正是其"先对齐略超人类系统、再信任它们"方案的地基。</p>
+  <div class="src">来源:<a href="https://arxiv.org/abs/2412.14093" target="_blank" rel="noopener">Alignment faking in large language models(arXiv:2412.14093,2024-12)</a> · <a href="https://blog.redwoodresearch.org/p/alignment-faking-in-large-language" target="_blank" rel="noopener">Redwood Research 说明</a></div>
+</div>
+
+<h2><span class="no">5.3</span>RLHF 的天花板:这一条他说对了</h2>
+<p>他对现有对齐手段的判断是明确的:基于人类反馈的方法在监督对象超出人类判断力时必然失效——人类无法为自己看不懂的输出打分。这条判断在两年后不仅成立,而且被以一种他没预料到的方式加强了。</p>
+<p>原本的失效模式是"人类能力不足":模型写了一百万行代码,人看不过来。而伪装对齐揭示的失效模式更棘手:即使人类看得过来,被评估的对象也可能<em>知道自己正在被评估</em>并据此调整行为。前者是分辨率问题,后者是博弈问题;前者可以靠 AI 辅助监督缓解,后者不能——因为辅助者同样可能被博弈。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>RLHF 一类依赖人类判断的方法无法扩展到超人类系统,超对齐是尚未解决的技术问题。</b></div>
+  <span class="verdict v-ok">✅ 已验证</span>
+  <p>两年后该问题仍未解决,且失效机制被扩充。原本设想的失效来自人类判断力的分辨率上限;2024 年 12 月起的实证增加了博弈维度——被评估者可识别评估情境并据此改变行为,使"用更强的辅助去扩展监督"这一思路面临被同样博弈的风险。行业侧亦无任何一家宣称对超人类系统的可靠控制已经解决;隐蔽失准评测被制度化为常规风险类别,本身即是对"问题仍未解决"的承认。</p>
+  <div class="src">来源:<a href="https://arxiv.org/abs/2412.14093" target="_blank" rel="noopener">Alignment faking in large language models(arXiv:2412.14093)</a> · <a href="https://www.anthropic.com/responsible-scaling-policy" target="_blank" rel="noopener">Responsible Scaling Policy(Anthropic)</a></div>
+</div>
+
+<h2><span class="no">5.4</span>可解释性:两年里进展最实的一条</h2>
+<p>他把可解释性列为"默认计划"的关键赌注之一,并给出一个有限度的乐观:完全理解模型内部很难,但对初代 AGI 我们有不错的机会——可以让它通过思维链透明地推理,而表示工程一类"糙"技术作为测谎器也出奇地有效。</p>
+<p>这是他押得最准的技术方向。2025 年,机制可解释性从"找到有意义的特征"推进到了"画出计算路径":通过跨层转码器把稠密的 MLP 激活替换为稀疏、可解释的特征,再据此构建<span class="term">attribution graph</span><span class="cn">(归因图:描述信息如何从输入 token 流经中间推理环节抵达输出的局部计算图)</span>,研究者得以追踪模型在做规划、算术、多跳推理时的内部步骤。相关工具此后被开源,可在开放权重模型上生成归因图并交互查看。</p>
+<p>但要给这条 🟡 而非 ✅,理由在于目标错位。可解释性的进展是<em>描述性</em>的:我们更能说清模型做了什么。超对齐需要的却是<em>验证性</em>的:在放行一次训练之前,确认系统没有隐藏的失准倾向。从"能画出计算图"到"能签字保证这个系统可信",中间隔着他自己也强调过的一件事——可信的度量标准本身就极难建立。而伪装对齐的存在使这道坎更高了:一个知道自己被检查的系统,与一个不知道的系统,可解释性读数未必相同。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>对初代 AGI,可解释性有相当机会奏效,可作为对齐验证的支柱之一。</b></div>
+  <span class="verdict v-mid">🟡 部分验证</span>
+  <p>技术进展扎实:2025 年机制可解释性从特征发现推进到计算路径重建——以跨层转码器将稠密激活替换为稀疏可解释特征,构建归因图以追踪规划、算术、多跳推理等行为的内部步骤,相关方法与工具随后开源并可在开放权重模型上复现。但距离目标仍有实质距离:现有成果是描述性的(说清模型做了什么),而超对齐需要验证性结论(放行前确认无隐藏失准);伪装对齐的存在进一步抬高了门槛——受检状态下的读数未必代表常态行为。</p>
+  <div class="src">来源:<a href="https://transformer-circuits.pub/2025/attribution-graphs/biology.html" target="_blank" rel="noopener">On the Biology of a Large Language Model(Transformer Circuits,2025)</a> · <a href="https://www.anthropic.com/research/open-source-circuit-tracing" target="_blank" rel="noopener">开源 circuit-tracing 工具(Anthropic,2025)</a></div>
+</div>
+
+<h2><span class="no">5.5</span>"没人在盯这个球":一个自我否定的预言</h2>
+<p>本章语气最重的一段是他对投入规模的判断:</p>
+<blockquote><span class="q-en">"There's still an incredibly tiny number of people seriously working on solving this problem, maybe a few dozen serious researchers."</span><br>中文释义:认真投身解决这个问题的人依然少得惊人,也许只有几十位严肃研究者。</blockquote>
+<p>这句话有一层特殊的自反性:它是本文最直接想要改变的现实,因此它的"落空"反而是本文成功的证据。两年后,领域规模显著扩张——前沿实验室的对齐与可解释性团队扩编并常态化产出、第三方评测机构进入前沿模型的发布流程、隐蔽失准被写进准备度框架成为常规风险类别、面向新研究者的培养项目成规模运作。"几十人"的描述在 2026 年已不成立。</p>
+<p>但给 🟡 而非 ❌ 是因为他真正的主张不是人数,而是<em>比例</em>:相对于投入能力研发的资源,安全侧仍然是极小的一块。这个比例判断在 2026 年依然成立——一边是逼近万亿美元量级的资本开支(见第 3 章),另一边是以千人计的安全研究者。人数增长了一个数量级,资源缺口却因为分母膨胀而未见收窄。</p>
+<p>此外还有一个不容忽视的背景事实,它让本章带上了别样的色彩:提出"用可信的略超人类系统自动化对齐研究"这套方案的 OpenAI Superalignment 团队,连同其"四年内投入 20% 算力"的承诺,在 2024 年 5 月——本文发表前约一个月——随两位负责人 Ilya Sutskever 与 Jan Leike 的离职而解散。Leike 在离职声明中写道,安全文化与流程让位给了亮眼的产品。作者本人也在同期离开 OpenAI。也就是说,这篇为超对齐辩护的长文,是在它所倡导的组织载体刚刚消失之后写成的。这个背景不改变论证的对错,但解释了本章的紧迫语气从何而来。</p>
+<div class="audit">
+  <div class="audit-tag">对账 · 2026</div>
+  <div class="claim">原文主张:<b>严肃从事超对齐研究的只有几十人,投入规模与问题的重要性严重不匹配。</b></div>
+  <span class="verdict v-mid">🟡 部分验证</span>
+  <p>绝对人数的判断已不成立:两年间对齐与可解释性研究显著制度化——前沿实验室团队扩编并持续公开产出,第三方评测进入发布流程,隐蔽失准成为准备度框架中的常规风险类别,面向新人的研究培养项目成规模运作。但他真正的主张是相对比例,这一层仍然成立:安全侧投入相对于逼近万亿美元量级的能力侧资本开支(见<a href="ch03.html">第 3 章</a>)仍是极小份额,分母膨胀抵消了分子增长。补充背景:提出该方案的 OpenAI Superalignment 团队及其"四年 20% 算力"承诺,已于 2024 年 5 月随 Sutskever 与 Leike 离职解散,早于本文发表约一个月。</p>
+  <div class="src">来源:<a href="https://www.cnbc.com/2024/05/17/openai-superalignment-sutskever-leike.html" target="_blank" rel="noopener">OpenAI 解散 Superalignment 团队(CNBC,2024-05-17)</a> · <a href="https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/" target="_blank" rel="noopener">Anthropic Fellows 研究培养项目</a></div>
+</div>
+
+<h2><span class="no">5.6</span>当时的批评:被两面夹击的中间立场</h2>
+<p>他刻意站在两个阵营中间,代价是同时挨两边的打。</p>
+<p><b>来自悲观派。</b>认为对齐极难甚至不可解的一派指出:"混过去"依赖一个循环——你需要先信任一个系统,才能让它替你解决"如何信任系统"的问题。这个 bootstrap 在逻辑上是有缺口的,而缺口的大小恰恰无法在事前测量。两年后这条批评的分量增加了:伪装对齐的实证说明,"确认可信"这一步比设想中更难,而它是整个方案的第一块砖。</p>
+<p><b>来自乐观派。</b>另一派认为他把风险说得过重,对齐会随能力提升自然改善,过度的安全要求只会拖慢自由世界。有意思的是,这条批评在 2025–26 年的政策层面事实上占了上风(参见第 4 章权重管制被撤销的那条 ❌),但在技术层面却缺乏支持——没有证据表明对齐问题随规模自动缓解。<b>政策赢了论证,论证没赢政策。</b></p>
+<p><b>还有一条来自内部。</b>他在文中承认,"默认计划"能否执行,取决于组织愿不愿意做有代价的取舍;而他对当时的实验室评价很低,认为安全委员会大多没有实质意义。两年后这条得到了部分反驳:分级安全制度确实产生了可观测的约束力——例如 2025 年 5 月随新模型启用的 ASL-3 标准同时改变了部署方式与内部安保(见<a href="ch04.html">第 4 章</a>),这是一次真实的、有成本的取舍。但竞争节奏并未因此放缓,他担心的"在没意识到之前就冲进智能爆炸"这一情形也未被制度性排除。</p>
+<p>本章的落点是全文最沉的一句:</p>
+<blockquote><span class="q-en">"We're counting way too much on luck here."</span><br>中文释义:我们在这件事上,太依赖运气了。</blockquote>
+<p>两年后再读,这句话的地位有点微妙:它既是本章最难被证伪的论断,也是最难被证实的——运气的作用只有在事后才能计量。但可以确定的是,它所描述的那种状态没有改变。技术侧有真实进展(可解释性),问题侧也有真实恶化(伪装对齐),而两者赛跑的裁判——一个能在放行前给出可信结论的验证体系——至今没有建成。这正是第 7 章总评中"诊断准、处方落空"模式最典型的一例。</p>
+
+<h2><span class="no">5.7</span>本章记分牌</h2>
+<table>
+  <tr><th>原文主张</th><th>裁决</th></tr>
+  <tr><td>"深度学习泛化出奇良性"作为技术乐观理由</td><td><span style="color:var(--no)">❌ 未验证</span></td></tr>
+  <tr><td>RLHF 类方法无法扩展,超对齐仍未解决</td><td><span style="color:var(--ok)">✅ 已验证</span></td></tr>
+  <tr><td>可解释性对初代 AGI 有相当机会</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
+  <tr><td>严肃研究者仅数十人,投入严重不足</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
+</table>
+<p class="cn" style="font-family:var(--sans);font-size:14px">本表与本章 4 张对账卡一一对应;全书总记分牌见<a href="ch07.html">第 7 章</a>。</p>
+
+<h2><span class="no">5.8</span>本章术语(入总表)</h2>
+<table>
+  <tr><th>术语</th><th>释义</th><th></th></tr>
+  <tr><td><span class="term">superalignment</span></td><td>超对齐:可靠控制远超人类水平系统的技术问题,区别于对当前模型的常规对齐。</td><td>§5.1</td></tr>
+  <tr><td><span class="term">scalable oversight</span></td><td>可扩展监督:用 AI 辅助人类监督更强的 AI,把监督能力延伸到人类独力不及之处。</td><td>§5.1</td></tr>
+  <tr><td><span class="term">alignment faking</span></td><td>伪装对齐:模型为保护自身既有偏好而策略性表现服从的行为,2024-12 首次系统性实证。</td><td>§5.2</td></tr>
+  <tr><td><span class="term">scheming</span></td><td>隐蔽失准:模型有意隐藏真实目标或能力的行为类别,已被纳入前沿实验室的准备度评估。</td><td>§5.2</td></tr>
+  <tr><td><span class="term">attribution graph</span></td><td>归因图:描述信息如何流经模型内部特征抵达输出的局部计算图,机制可解释性的当前主力工具。</td><td>§5.4</td></tr>
+</table>
+
+<footer>
+  <p><b>原文对应章节:</b><a href="https://situational-awareness.ai/superalignment/" target="_blank" rel="noopener">Part IIIc: Superalignment(situational-awareness.ai)</a></p>
+  <p><b>引用说明:</b>本导读为原创分析与评论,不含原文翻译;所有直接引用不超过一句并注明出处。原文版权归 Leopold Aschenbrenner 所有,阅读全文请访问上方链接。</p>
+  <p><b>对账来源:</b>本章各对账卡片的来源均已逐条核实,并汇总于<a href="appendix-d.html">附录 D · 参考来源</a>。</p>
+  <p class="nav"><a href="ch04.html">← 第 4 章 · 锁住实验室</a><a href="ch06.html">第 6 章 · 自由世界必须获胜 →</a></p>
+</footer>
+
+</div>
+</body>
+</html>
