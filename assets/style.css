@@ -50,5 +50,6 @@
   td:last-child{white-space:nowrap;font-family:var(--mono);font-size:13px}
 
   footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--line);font-family:var(--sans);font-size:13.5px;color:var(--text-dim);line-height:2}
+  .nav{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font-size:14px}
   a{color:var(--concept);text-decoration:none;border-bottom:1px solid rgba(127,180,230,.35)}
   @media (prefers-reduced-motion: no-preference){ .audit{transition:border-color .2s} .audit:hover{border-color:var(--accent)} }
