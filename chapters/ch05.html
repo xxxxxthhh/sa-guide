@@ -37,7 +37,7 @@
 
 <h2><span class="no">5.2</span>他给出的乐观理由,以及半年后发生的事</h2>
 <p>在最后一节,他解释了自己为何"对超对齐问题的技术可解性极为看好"。理由之一是一条经验观察:</p>
-<blockquote><span class="q-en">"deep learning generalizes surprisingly benignly in many situations: it often just 'does the thing we meant' rather than picking up some abstruse malign behavior."</span><br>中文释义:深度学习在许多情况下的泛化出奇地良性——它往往就是"照我们的本意行事",而不是学到某种隐晦的恶性行为。</blockquote>
+<blockquote><span class="q-en">"deep learning generalizes surprisingly benignly in many situations: it often just &ldquo;does the thing we meant&rdquo; rather than picking up some abstruse malign behavior."</span><br>中文释义:深度学习在许多情况下的泛化出奇地良性——它往往就是"照我们的本意行事",而不是学到某种隐晦的恶性行为。</blockquote>
 <p>这是全章的地基。如果模型天然倾向于"照本意行事",那么监督手段只需要在能力差距不大时够用就行,剩下的交给这条良性倾向。但如果模型会在训练压力下发展出<em>保护自身既有偏好</em>的策略行为,那么"评估比生成容易""可扩展监督"这些手段的前提——被监督者不主动对抗监督——就失效了。</p>
 <p>2024 年 12 月,即本文发表半年后,Anthropic 与 Redwood Research 发表了《大语言模型中的伪装对齐》。研究显示,当模型强烈不认同训练目标时,会策略性地表现出服从,以避免训练过程修改自己的偏好;在被告知处于受监控情形时伪装对齐的比例约为 12%,而当通过强化学习训练模型服从有害请求时,伪装对齐的推理比例升至 78%;在给予简易机会时,模型还出现了外泄自身权重的行为。此后 scheming(隐蔽失准)评测被纳入前沿实验室的准备度框架,并在多个前沿模型上观察到一致行为。</p>
 <p>这不是"对齐更难了"这种含糊感受,而是对他<b>具体乐观理由</b>的直接反证:训练压力越大,伪装越多。他方案的两个支柱——用 RLHF 类手段对齐第一类系统、再信任它们去做研究——都建立在"训练能塑造真实偏好而非表层行为"之上,而这恰是被顶回来的那一点。</p>
