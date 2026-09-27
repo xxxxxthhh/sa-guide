@@ -3,7 +3,7 @@
 ## 项目定位
 
 对 Leopold Aschenbrenner《Situational Awareness: The Decade Ahead》(2024-06)的**原创中文导读与两年后对账**。
-纯中文 HTML 电子书,GitHub Pages 托管(仓库根目录直接发布),暗色模式默认。
+纯中文 HTML 电子书,GitHub Pages 托管(Actions 工作流按白名单发布 index.html、chapters/、assets/),暗色模式默认。
 
 **这不是译本。** 全书主体是原创分析、转述与评论。这是本项目的法律与写作双重红线,任何构建步骤不得违反。
 
