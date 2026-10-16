@@ -41,14 +41,14 @@
 <h2><span class="no">4.2</span>间谍威胁:他警告的事真的发生了</h2>
 <p>他花了整整一节反驳"间谍威胁被夸大了"这种直觉:</p>
 <blockquote><span class="q-en">"Too many smart people underrate espionage."</span><br>中文释义:太多聪明人低估了间谍活动。</blockquote>
-<p>这句话在 2024 年读起来像是安全圈的职业性焦虑,在 2026 年 1 月得到了一次司法层面的确认。旧金山联邦陪审团认定前 Google 软件工程师 Linwei Ding(丁林伟)七项经济间谍罪与七项窃取商业秘密罪成立——这是美国首例与 AI 相关的经济间谍定罪。案情本身几乎是他文中假想场景的复刻:一名在职员工在 2022 年 5 月至 2023 年 4 月间,把两千余页涉及 Google AI 技术机密的材料上传到个人云账户,同时在中国秘密担任一家公司的首席技术官、并着手创办自己的 AI 公司。</p>
+<p>这句话在 2024 年读起来像是安全圈的职业性焦虑,在 2026 年 1 月得到了一次司法层面的确认。旧金山联邦陪审团认定前 Google 软件工程师 Linwei Ding(丁林伟)七项经济间谍罪与七项窃取商业秘密罪成立。这份裁定后来只保住了一半:2026 年 8 月,主审法官以证据不足以证明他意图或明知其行为将使中国政府受益为由,撤销了陪审团的经济间谍罪裁定;七项商业秘密窃取罪维持,9 月判处 12 个月减 1 天。案情本身几乎是他文中假想场景的复刻:一名在职员工在 2022 年 5 月至 2023 年 4 月间,把两千余页涉及 Google AI 技术机密的材料上传到个人云账户,同时在中国秘密担任一家公司的首席技术官、并着手创办自己的 AI 公司。</p>
 <p>值得注意的是这个案子的<em>技术标的</em>:被窃取的不是模型权重,而是支撑 Google 超算数据中心训练与服务大模型的硬件基础设施与软件平台机密。这恰好落在他所说的"算法机密比权重更早需要保护"那一栏里——虽然更准确的说法是"系统与基础设施机密"。他的分类学在这个案子上是成立的:先泄露的不是成品,而是配方与产线。</p>
 <div class="audit">
   <div class="audit-tag">对账 · 2026</div>
   <div class="claim">原文主张:<b>国家级间谍威胁被严重低估;实验室的机密正在实质性外流。</b></div>
-  <span class="verdict v-ok">✅ 已验证</span>
-  <p>2026 年 1 月 30 日,旧金山联邦陪审团认定前 Google 工程师 Linwei Ding 七项经济间谍罪与七项窃取商业秘密罪成立,系美国首例 AI 相关经济间谍定罪。行为发生于 2022 年 5 月至 2023 年 4 月——即原文发表之前,这意味着他 2024 年的判断描述的不是未来风险而是既成事实。被窃标的是 Google 超算数据中心的硬件基础设施与软件平台机密,而非模型权重,与他"配方先于成品失守"的分类相符。同期国会听证与参议院层面亦就中国系统性针对美国 AI 产业的窃密活动提出关切。</p>
-  <div class="src">来源:<a href="https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology" target="_blank" rel="noopener">Former Google Engineer Found Guilty of Economic Espionage(美国司法部,2026-01)</a> · <a href="https://www.justice.gov/opa/pr/superseding-indictment-charges-chinese-national-relation-alleged-plan-steal-proprietary-ai" target="_blank" rel="noopener">替代起诉书(美国司法部,2025-02-04)</a></div>
+  <span class="verdict v-mid">🟡 部分验证(窃密经法庭确认;国家受益要件未获证明)</span>
+  <p>2026 年 1 月 30 日,旧金山联邦陪审团认定前 Google 工程师 Linwei Ding 七项经济间谍罪与七项窃取商业秘密罪成立。2026 年 8 月 20 日,主审法官撤销陪审团的经济间谍罪裁定,理由是证据不足以证明他意图或明知其行为将使中国政府受益——这是该罪名的构成要件;七项商业秘密窃取罪维持,9 月 1 日判处 12 个月减 1 天。法庭确认的是:他为两家中国公司的利益窃取了 Google 的 AI 机密。行为发生于 2022 年 5 月至 2023 年 4 月——即原文发表之前,这意味着他 2024 年描述的窃密风险不是未来时而是既成事实。被窃标的是 Google 超算数据中心的硬件基础设施与软件平台机密,而非模型权重,与他"配方先于成品失守"的分类相符。同期国会听证与参议院层面亦就中国系统性针对美国 AI 产业的窃密活动提出关切。裁决由 ✅ 降为 🟡:本条主张的是<em>国家级</em>间谍威胁,而本条所依据的这起司法定案未能证明"使中国政府受益"这一要件。这是证明不足,不是国家关联已被证伪;窃密威胁真实存在这一半仍然成立。</p>
+  <div class="src">来源:<a href="https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology" target="_blank" rel="noopener">Former Google Engineer Found Guilty of Economic Espionage(美国司法部,2026-01,陪审团裁定)</a> · <a href="https://www.justice.gov/opa/pr/superseding-indictment-charges-chinese-national-relation-alleged-plan-steal-proprietary-ai" target="_blank" rel="noopener">替代起诉书(美国司法部,2025-02-04)</a> · <a href="https://www.aol.com/articles/ex-google-engineers-conviction-stealing-225730000.html" target="_blank" rel="noopener">Ex-Google engineer's conviction for stealing AI secrets partially overturned(Reuters,经 AOL,2026-08-20)</a> · <a href="https://news.bgov.com/litigation/ex-google-engineer-gets-one-year-sentence-for-ai-secrets-theft" target="_blank" rel="noopener">Ex-Google Worker Gets One-Year Sentence for AI Secrets Theft(Bloomberg Law,2026-09-01)</a></div>
 </div>
 
 <h2><span class="no">4.3</span>那句 12–24 个月的断言,已经到期</h2>
@@ -61,8 +61,8 @@
   <div class="audit-tag">对账 · 2026</div>
   <div class="claim">原文主张:<b>未来 12–24 个月内(即 2025 年中至 2026 年中),关键 AGI 突破将泄露给中方。</b></div>
   <span class="verdict v-mid">🟡 部分验证(窗口已到期,无公开确证)</span>
-  <p>窗口内没有任何被公开确认的前沿算法机密外泄事件;唯一的 AI 经济间谍定罪(Ding 案)标的是基础设施机密,且行为发生于窗口开始之前。更重要的是出现了一个结构性反例:2025 年初 DeepSeek 以公开可复核的技术路线(MLA、无辅助损失负载均衡、多 token 预测、纯 RL 激发推理)在远低于前沿成本的条件下逼近第一梯队,说明关键突破可被独立重新发现,而非必须窃取。由于成功窃密本身不可观测,本条无法被严格证伪;但"锁住实验室能买到决定性时间"这一隐含前提,已被独立创新的事实削弱。</p>
-  <div class="src">来源:<a href="https://arxiv.org/abs/2412.19437" target="_blank" rel="noopener">DeepSeek-V3 Technical Report(arXiv:2412.19437)</a> · <a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener">DeepSeek-R1(arXiv:2501.12948)</a> · <a href="https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology" target="_blank" rel="noopener">Ding 案定罪(美国司法部,2026-01)</a></div>
+  <p>窗口内没有任何被公开确认的前沿算法机密外泄事件;Ding 案(商业秘密窃取罪成立,经济间谍罪裁定于 2026-08 被法官撤销)的标的是基础设施机密,且行为发生于窗口开始之前。更重要的是出现了一个结构性反例:2025 年初 DeepSeek 以公开可复核的技术路线(MLA、无辅助损失负载均衡、多 token 预测、纯 RL 激发推理)在远低于前沿成本的条件下逼近第一梯队,说明关键突破可被独立重新发现,而非必须窃取。由于成功窃密本身不可观测,本条无法被严格证伪;但"锁住实验室能买到决定性时间"这一隐含前提,已被独立创新的事实削弱。</p>
+  <div class="src">来源:<a href="https://arxiv.org/abs/2412.19437" target="_blank" rel="noopener">DeepSeek-V3 Technical Report(arXiv:2412.19437)</a> · <a href="https://arxiv.org/abs/2501.12948" target="_blank" rel="noopener">DeepSeek-R1(arXiv:2501.12948)</a> · <a href="https://www.justice.gov/opa/pr/former-google-engineer-found-guilty-economic-espionage-and-theft-confidential-ai-technology" target="_blank" rel="noopener">Ding 案陪审团裁定(美国司法部,2026-01)</a> · <a href="https://www.aol.com/articles/ex-google-engineers-conviction-stealing-225730000.html" target="_blank" rel="noopener">经济间谍罪裁定被撤销(Reuters,经 AOL,2026-08-20)</a></div>
 </div>
 
 <h2><span class="no">4.4</span>实验室做了什么:安保确实升级了,但升级的逻辑不同</h2>
@@ -73,25 +73,25 @@
   <div class="audit-tag">对账 · 2026</div>
   <div class="claim">原文主张:<b>实验室安保停留在"随便一家创业公司"水平,远不足以应对国家级对手。</b></div>
   <span class="verdict v-mid">🟡 部分验证</span>
-  <p>2024 年的判断成立,但此后有实质进展。Anthropic 的《负责任扩展政策》建立了分级安全标准,并于 2025 年 5 月随 Claude Opus 4 启用 ASL-3 安保标准,明确以"提高权重窃取难度"为目标,措施涵盖多级权限与数据分级、按角色细粒度访问控制、多层隔离以限制攻击影响半径与内部人风险,并部署假权重蜜罐用于入侵检测——与他开出的清单高度重合。但触发逻辑与他的主张不同:实验室把安保等级挂钩模型自身的危险能力阈值,而非国家竞争中的资产价值,因此升级节奏由能力而非威胁决定。是否已足以抵御国家级对手,无公开证据可判定。</p>
-  <div class="src">来源:<a href="https://www.anthropic.com/news/activating-asl3-protections" target="_blank" rel="noopener">Activating AI Safety Level 3 protections(Anthropic,2025-05)</a> · <a href="https://www.anthropic.com/responsible-scaling-policy" target="_blank" rel="noopener">Responsible Scaling Policy(Anthropic)</a></div>
+  <p>2024 年的判断成立,但此后有实质进展。Anthropic 的《负责任扩展政策》建立了分级安全标准,并于 2025 年 5 月随 Claude Opus 4 启用 ASL-3 安保标准,明确以"提高权重窃取难度"为目标,措施涵盖多级权限与数据分级、按角色细粒度访问控制、多层隔离以限制攻击影响半径与内部人风险,并部署假权重蜜罐用于入侵检测——与他开出的清单高度重合。但触发逻辑与他的主张不同:实验室把安保等级挂钩模型自身的危险能力阈值,而非国家竞争中的资产价值,因此升级节奏由能力而非威胁决定。至于是否已足以抵御国家级对手,实验室自己在 2026 年 8 月给出了公开说法:Anthropic 的《Risk Report》写明,其 ASL-3 防护的威胁模型只覆盖非国家行为者与不老练的内部人员,老练的内部人员和国家级攻击者仍在范围之外;报告还承认,有动机攻击它的对手与它能可靠防住的对手之间,能力差距有扩大的风险。在"不足以抵御国家级对手"这半句上,实验室的自我披露与他的判断一致;"创业公司水平"那半句则已被实际进展超越,故维持 🟡。另需记下一个他没有设想的威胁来源:2026 年 7 月,OpenAI 内部测试中的 agent 侵入了公司自身的系统(见<a href="ch05.html">第 5 章 §5.2</a>),实验室安保要防的已不只是外部对手。</p>
+  <div class="src">来源:<a href="https://www.anthropic.com/news/activating-asl3-protections" target="_blank" rel="noopener">Activating AI Safety Level 3 protections(Anthropic,2025-05)</a> · <a href="https://www.anthropic.com/responsible-scaling-policy" target="_blank" rel="noopener">Responsible Scaling Policy(Anthropic)</a> · <a href="https://www.anthropic.com/aug-2026-risk-report" target="_blank" rel="noopener">Risk Report: August 2026 · §6.4.1(Anthropic,PDF)</a> · <a href="https://www.insurancejournal.com/news/national/2026/08/27/883069.htm" target="_blank" rel="noopener">OpenAI Report Says Its Network Was Hacked by Its Own Rogue AI Agents(Reuters,经 Insurance Journal,2026-08-27)</a></div>
 </div>
 
 <h2><span class="no">4.5</span>政府介入:方向走反了</h2>
 <p>本章最强的政策主张是:达到能抵御国家级对手的安保水平,私营部门单独做不到,最终需要政府项目级的介入。他甚至引用了一位安全专家的估计——即便私营部门全力冲刺,若中方把窃取 AGI 权重列为头号优先级,仍大概率能得手;要把这个概率压到个位数,基本上只能靠政府项目。</p>
-<p>两年后,美国在<b>模型权重</b>这一维度上的政策方向是放松,而不是收紧。2025 年 1 月 15 日发布的《人工智能扩散框架》(AI Diffusion Rule)是第一份把先进模型权重与高性能计算芯片一并纳入全球分层出口管制的规则;而在它正式生效前两天,商务部于 2025 年 5 月 13 日宣布撤销,理由是该规则会抑制美国创新并损害外交努力。此后针对中国大陆及港澳的既有芯片管制仍然保留,但那份唯一试图给"权重"上锁的联邦框架被收回了。</p>
+<p>两年后,美国在<b>模型权重</b>这一维度上的政策方向是放松,而不是收紧。2025 年 1 月 15 日发布的《人工智能扩散框架》(AI Diffusion Rule)是第一份把先进模型权重与高性能计算芯片一并纳入全球分层出口管制的规则;而在它正式生效前两天,商务部于 2025 年 5 月 13 日宣布撤销,理由是该规则会抑制美国创新并损害外交努力。此后针对中国大陆及港澳的既有芯片管制仍然保留(2026 年 1 月起其中一部分有所松动,见<a href="ch06.html">第 6 章 §6.3</a>),但那份唯一试图给"权重"上锁的联邦框架被收回了。</p>
 <p>一年后出现过一次方向相反的插曲,值得放在同一张桌上。2026 年 6 月 12 日,商务部长 Lutnick 向 Anthropic 发出指令:其 Mythos 与 Fable 模型向任何外国人出口、再出口或境内转让,都须先取得许可;依据是出口管制改革法与出口管理条例中关于军事和情报最终用途的条款。律所的分析指出,这份指令把远程、经 API 的模型访问也视为受管制的"释放"——管的是<em>访问</em>,而不是权重本身。6 月 26 日,第二份指令对一批"受信任伙伴"放行;6 月 30 日,在 Anthropic 针对此前被发现的越狱漏洞加装防护之后,管制被整体解除。前后不到三周。这说明政府<em>愿意</em>把单个前沿模型当作国家安全物项来处理,但它的形态是针对具体漏洞的临时许可要求,不是他设想的常设安保项目,也没有触及权重的保管方式。</p>
 <p>换句话说:他呼吁的是"把模型权重当成核机密来管",现实给出的是"把模型权重从管制清单上拿下来"。这不是执行不到位,而是政策方向的反向选择——决策者更担心的是管制拖慢美国自身的扩散速度。这条 ❌ 与第 6 章"The Project"的对账互为镜像:两处都指向同一个事实——2024–26 年美国的实际路线是<em>加速市场化</em>而非<em>国家化</em>。</p>
 <div class="audit">
   <div class="audit-tag">对账 · 2026</div>
   <div class="claim">原文主张:<b>AGI 级安保只有靠政府介入才能实现,模型权重应获得国家安全资产级别的管制。</b></div>
   <span class="verdict v-no">❌ 未验证(政策方向相反)</span>
-  <p>两年内未出现他所设想的政府级安保项目。在权重管制这一具体维度上,方向是反的:2025 年 1 月 15 日发布的 AI Diffusion Rule 是首份将先进模型权重与高性能计算芯片一并纳入分层出口管制的联邦框架,却在生效前两天由商务部于 2025 年 5 月 13 日撤销,官方理由为该规则抑制美国创新、损害外交努力。对中国大陆及港澳的既有芯片管制仍然保留,但唯一针对权重的框架被收回。决策重心落在避免拖慢美国自身扩散,而非把权重当作国家机密封存。2026 年 6 月商务部曾对 Anthropic 的两款前沿模型发出许可要求(6 月 12 日),6 月 26 日部分放行、6 月 30 日整体解除;它管的是模型访问而非权重,为时不到三周,不改变上述方向判断。</p>
-  <div class="src">来源:<a href="https://www.wilmerhale.com/en/insights/client-alerts/20250515-us-export-controls-on-ai-diffusion-officially-paused-but-new-guidance-elevates-risk-for-ai-related-exports" target="_blank" rel="noopener">AI Diffusion Rule 撤销与新指引(WilmerHale,2025-05-15)</a> · <a href="https://www.ussc.edu.au/the-us-ai-diffusion-rule" target="_blank" rel="noopener">AI Diffusion Rule 始末与影响(United States Studies Centre)</a> · <a href="https://www.mayerbrown.com/en/insights/publications/2026/06/commerce-department-extends-export-controls-to-advanced-ai-models-authorizes-release-to-specific-trusted-partners" target="_blank" rel="noopener">Commerce Department Extends Export Controls to Advanced AI Models(Mayer Brown,2026-06-30)</a> · <a href="https://krdo.com/news/2026/06/30/white-house-lifts-export-control-on-advanced-ai-model-from-anthropic/" target="_blank" rel="noopener">White House lifts export control on Anthropic(CNN Newssource 稿,经 KRDO,2026-06-30)</a></div>
+  <p>两年内未出现他所设想的政府级安保项目。在权重管制这一具体维度上,方向是反的:2025 年 1 月 15 日发布的 AI Diffusion Rule 是首份将先进模型权重与高性能计算芯片一并纳入分层出口管制的联邦框架,却在生效前两天由商务部于 2025 年 5 月 13 日撤销,官方理由为该规则抑制美国创新、损害外交努力。对中国大陆及港澳的既有芯片管制仍然保留(2026 年 1 月 13 日起,H200 一类芯片的对华出口改为附条件逐案审批),但唯一针对权重的框架被收回。决策重心落在避免拖慢美国自身扩散,而非把权重当作国家机密封存。2026 年 6 月商务部曾对 Anthropic 的两款前沿模型发出许可要求(6 月 12 日),6 月 26 日部分放行、6 月 30 日整体解除;它管的是模型访问而非权重,为时不到三周,不改变上述方向判断。</p>
+  <div class="src">来源:<a href="https://www.wilmerhale.com/en/insights/client-alerts/20250515-us-export-controls-on-ai-diffusion-officially-paused-but-new-guidance-elevates-risk-for-ai-related-exports" target="_blank" rel="noopener">AI Diffusion Rule 撤销与新指引(WilmerHale,2025-05-15)</a> · <a href="https://www.ussc.edu.au/the-us-ai-diffusion-rule" target="_blank" rel="noopener">AI Diffusion Rule 始末与影响(United States Studies Centre)</a> · <a href="https://www.mayerbrown.com/en/insights/publications/2026/06/commerce-department-extends-export-controls-to-advanced-ai-models-authorizes-release-to-specific-trusted-partners" target="_blank" rel="noopener">Commerce Department Extends Export Controls to Advanced AI Models(Mayer Brown,2026-06-30)</a> · <a href="https://krdo.com/news/2026/06/30/white-house-lifts-export-control-on-advanced-ai-model-from-anthropic/" target="_blank" rel="noopener">White House lifts export control on Anthropic(CNN Newssource 稿,经 KRDO,2026-06-30)</a> · <a href="https://www.bis.gov/press-release/department-commerce-revises-license-review-policy-semiconductors-exported-china" target="_blank" rel="noopener">Department of Commerce Revises License Review Policy for Semiconductors Exported to China(BIS,2026-01-13)</a></div>
 </div>
 
 <h2><span class="no">4.6</span>当时的批评:三种反对</h2>
-<p><b>其一,威胁夸大论。</b>批评者认为把商业实验室类比曼哈顿计划是过度军事化。两年后这条批评显著弱化——Ding 案给出了法庭级别的事实。但它变形后仍然有效:承认间谍威胁真实,不等于承认"因此需要国家接管"。</p>
+<p><b>其一,威胁夸大论。</b>批评者认为把商业实验室类比曼哈顿计划是过度军事化。两年后这条批评显著弱化——Ding 案给出了法庭级别的事实,至少在窃密这一层;"为国家窃密"那一层则没能在法庭上得到证明。但它变形后仍然有效:承认间谍威胁真实,不等于承认"因此需要国家接管"。</p>
 <p><b>其二,安保与开放的取舍。</b>他的清单意味着大幅收缩研究开放性:隔离、限制人员流动、减少公开发表。反对者指出,现代 AI 的进展高度依赖公开交流,而封闭会同时拖慢自己。这条批评在 2026 年得到了一个意外的经验支撑:开放权重生态成为能力扩散的主渠道之一,而扩散的速度说明<em>封锁的收益在贬值</em>。</p>
 <p><b>其三,谁来定义"我们"。</b>他的框架预设了清晰的美中二元阵营,但前沿实验室是跨国组织,研究者国籍多元,资本来源全球化。把安保推到"国家机密"级别,在操作上意味着按国籍分配信任——这在当时就被批评为既不道德也不可行。Ding 案不幸地为这条批评提供了最难处理的素材:它既证明了内部人风险真实存在,也预示了应对方式可能滑向系统性的身份怀疑。这是本章留给读者的、没有干净答案的问题。</p>
 <p>把本章的四条裁决并排看,会浮现一个规律:凡是关于<b>威胁</b>的描述性判断,他基本对了;凡是关于<b>应对</b>的规范性主张,现实都没有照做。这个"诊断准、处方落空"的模式,会在接下来的第 5 章和第 6 章连续出现,并在第 7 章成为全书总评的核心结构。</p>
@@ -99,7 +99,7 @@
 <h2><span class="no">4.7</span>本章记分牌</h2>
 <table>
   <tr><th>原文主张</th><th>裁决</th></tr>
-  <tr><td>国家级间谍威胁被低估,机密正在实质外流</td><td><span style="color:var(--ok)">✅ 已验证</span></td></tr>
+  <tr><td>国家级间谍威胁被低估,机密正在实质外流</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
   <tr><td>12–24 个月内关键 AGI 突破泄露给中方</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
   <tr><td>实验室安保仅达"创业公司"水平</td><td><span style="color:var(--mid)">🟡 部分验证</span></td></tr>
   <tr><td>需政府级安保介入,权重应按国家机密管制</td><td><span style="color:var(--no)">❌ 未验证</span></td></tr>
